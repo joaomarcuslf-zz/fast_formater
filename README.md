@@ -1,4 +1,4 @@
-# FastFormater
+# FastFormater o.1.3
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/fast_formater`. To experiment with that code, run `bin/console` for an interactive prompt.
 
@@ -22,7 +22,25 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+  After adding the gem:
+
+```ruby
+h = {
+  font: "Arial",
+  size: 17,
+  style: "bold",
+  title: "text-expects"
+}
+
+f = FastFormater::Formater.new
+
+f.getXml(h)  #This will create XML type of data
+f.getJson(h) #This will create JSON type of data
+
+f.makeXml(h)  #This will create XML file called 'format.xml'
+f.makeJson(h) #This will create JSON file called 'format.json'
+
+```
 
 ## Development
 

@@ -21,14 +21,14 @@ module FastFormater
     end
 
     def makeJson(h)
-		if @json_format != nil then getJson(@rb_hash) end 
+		if @json_format != nil then getJson(h) end 
 		f = File.open("format.json", "w")
 		f.puts @json_format
 		f.close
     end
 
     def makeXml(h)
-    		if @xml_format != nil then getXml(@rb_hash) end
+    		if @xml_format != nil then getXml(h) end
     		f = File.open("format.xml", "w")
 		f.puts @xml_format
 		f.close
