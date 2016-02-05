@@ -33,7 +33,7 @@ describe FastFormater::Formater do
 
 
     it 'should convert correctly to xml' do
-      expect(@formating_tester.getXml(subject)).to eq "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n<unknown>\n   <font>Arial</font>\n   <size>17</size>\n   <style>bold</style>\n   <title>unknown</title>\n</unknown>"
+      expect(@formating_tester.getXml(subject)).to eq "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n<unknown>\n   <font>Arial</font>\n   <size>17</size>\n   <style>bold</style>\n</unknown>"
     end
   end
 

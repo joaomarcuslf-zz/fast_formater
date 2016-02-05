@@ -1,4 +1,4 @@
-#require "fast_formater/version"
+require "fast_formater/version.rb"
 require 'json'
 
 module FastFormater
@@ -19,6 +19,20 @@ module FastFormater
       formating(h, { xml: true })
       @xml_format
     end
+
+    def makeJson(h)
+		if @json_format != nil then getJson(@rb_hash) end 
+		f = File.open("format.json", "w")
+		f.puts @json_format
+		f.close
+    end
+
+    def makeXml(h)
+    		if @xml_format != nil then getXml(@rb_hash) end
+    		f = File.open("format.xml", "w")
+		f.puts @xml_format
+		f.close
+      end
 
     private
 
@@ -44,6 +58,7 @@ module FastFormater
         my_xml += "\n<#{hasher[:title]}>"
 
         hasher.each do |tag, content|
+        	if tag == :title then break end
           my_xml += "\n   <#{tag}>#{content}</#{tag}>"
         end
 
